@@ -12,6 +12,6 @@ class LeftViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset.top = UIApplication.sharedApplication().statusBarFrame.size.height
+        self.tableView.contentInset.top = self.view.frame.height / 3
     }
 }
