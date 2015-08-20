@@ -14,4 +14,9 @@ class LeftViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.contentInset.top = self.view.frame.height / 3
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.sideViewController().hideLeftViewController();
+    }
 }
