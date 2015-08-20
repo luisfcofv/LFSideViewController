@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBAction func openSideMenu(sender: AnyObject) {
-        var sideViewController = self.parentViewController?.parentViewController as! LFSideViewController
-        sideViewController.toogleLeftViewController()
+        self.sideViewController().toogleLeftViewController()
     }
 }

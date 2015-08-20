@@ -12,13 +12,13 @@ class LFSideViewController: UIViewController {
 
     var animationDuration: NSTimeInterval = 0.5
     var leftViewControllerVisible: Bool = false
-    
+    var contentView: UIView?
     var leftViewController : UIViewController? {
         didSet {
             if let leftViewController = self.leftViewController {
                 self.addChildViewController(leftViewController)
                 leftViewController.didMoveToParentViewController(self)
-                self.view.addSubview(leftViewController.view)
+                self.contentView!.addSubview(leftViewController.view)
             }
         }
     }
@@ -28,19 +28,24 @@ class LFSideViewController: UIViewController {
             if let contentViewController = self.contentViewController {
                 self.addChildViewController(contentViewController)
                 contentViewController.didMoveToParentViewController(self)
-                self.view.addSubview(contentViewController.view)
+                self.contentView!.addSubview(contentViewController.view)
             }
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.contentView = UIView(frame: self.view.frame)
+        self.view.insertSubview(self.contentView!, atIndex: 0)
+    }
+    
     func presentLeftViewController() {
-        self.presentLeftViewController(self.animationDuration, dampingRatio: 0.5, velocity: 10.0, options: .CurveEaseIn)
-//        self.presentLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseIn)
+//        self.presentLeftViewController(self.animationDuration, dampingRatio: 0.5, velocity: 10.0, options: .CurveEaseIn)
+        self.presentLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseIn)
     }
     
     func hideLeftViewController() {
-        self.hideLeftViewController(self.animationDuration, dampingRatio: 0.5, velocity: 10.0, options: .CurveEaseOut)
-//        self.hideLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseOut)
+        self.hideLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseOut)
     }
 
     func presentLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat,
