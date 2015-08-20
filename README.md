@@ -8,6 +8,11 @@ iOS 8 side menu
 * Xcode 6
 * iOS 8
 
+## Installation
+The best and easiest way is to use [CocoaPods](http://cocoapods.org).
+
+    pod 'ISSpriteKit', '~> 0.1.0'
+
 #### Usage
 
 ```
