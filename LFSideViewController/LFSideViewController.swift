@@ -9,18 +9,22 @@
 import UIKit
 
 @objc protocol LFSideViewDelegate {
-    optional func willPresentleftViewController()
-    optional func didPresentleftViewController()
-    optional func willHideleftViewController()
-    optional func didHideleftViewController()
+    optional func willPresentViewController(viewController: UIViewController?)
+    optional func didPresentViewController(viewController: UIViewController?)
+    optional func willHideViewController(viewController: UIViewController?)
+    optional func didHideViewController(viewController: UIViewController?)
 }
 
 class LFSideViewController: UIViewController {
 
+    @IBInspectable var leftSide: CGFloat = 250
+    @IBInspectable var rightSide: CGFloat = 250
+    
     var animationDuration: NSTimeInterval = 0.5
     var contentView: UIView?
     var delegate: LFSideViewDelegate?
     var leftViewControllerVisible: Bool = false
+    var rightViewControllerVisible: Bool = false
 
     var leftViewController : UIViewController? {
         didSet {
@@ -74,11 +78,11 @@ class LFSideViewController: UIViewController {
     }
     
     func hideRightViewController() {
-        self.hideLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseOut)
+        self.hideRightViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseOut)
     }
 
     func presentLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
-        self.delegate?.willPresentleftViewController?()
+        self.delegate?.willPresentViewController?(self.leftViewController)
         self.leftViewController?.view.hidden = false
             
         UIView.animateWithDuration(duration,
@@ -87,13 +91,14 @@ class LFSideViewController: UIViewController {
             initialSpringVelocity: velocity,
             options: options,
             animations: {
-                self.contentViewController!.view.frame.origin.x = 300
+                self.contentViewController!.view.frame.origin.x = self.leftSide
         }, completion: {_ in
-            self.delegate?.didPresentleftViewController?()
+            self.delegate?.didPresentViewController?(self.leftViewController)
         })
     }
     
     func presentRightViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
+        self.delegate?.willPresentViewController?(self.rightViewController)
         self.rightViewController?.view.hidden = false
         
         UIView.animateWithDuration(duration,
@@ -102,15 +107,23 @@ class LFSideViewController: UIViewController {
             initialSpringVelocity: velocity,
             options: options,
             animations: {
-                self.contentViewController!.view.frame.origin.x = -100
+                self.contentViewController!.view.frame.origin.x = -self.rightSide
         }, completion: {_ in
-                
+            self.delegate?.didPresentViewController?(self.rightViewController)
         })
     }
     
     func hideLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
-        self.delegate?.willHideleftViewController?()
-            
+        self.delegate?.willHideViewController?(self.leftViewController)
+        self.hideMenuViewController(duration, dampingRatio: dampingRatio, velocity: velocity, options: options, viewController: self.leftViewController)
+    }
+    
+    func hideRightViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
+        self.delegate?.willHideViewController?(self.rightViewController)
+        self.hideMenuViewController(duration, dampingRatio: dampingRatio, velocity: velocity, options: options, viewController: self.rightViewController)
+    }
+    
+    func hideMenuViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions, viewController: UIViewController?) {
         UIView.animateWithDuration(duration,
             delay: 0.0,
             usingSpringWithDamping: dampingRatio,
@@ -119,9 +132,10 @@ class LFSideViewController: UIViewController {
             animations: {
                 self.contentViewController!.view.frame.origin.x = 0
             }, completion: {_ in
-                self.leftViewController?.view.hidden = true
-                self.delegate?.didHideleftViewController?()
-            })
+                viewController?.view.hidden = true
+                self.delegate?.didHideViewController?(viewController)
+        })
+
     }
     
     func toogleLeftViewController() {
@@ -132,5 +146,15 @@ class LFSideViewController: UIViewController {
         }
     
         self.leftViewControllerVisible = !self.leftViewControllerVisible
+    }
+    
+    func toogleRightViewController() {
+        if self.rightViewControllerVisible {
+            hideRightViewController()
+        } else {
+            presentRightViewController()
+        }
+        
+        self.rightViewControllerVisible = !self.rightViewControllerVisible
     }
 }

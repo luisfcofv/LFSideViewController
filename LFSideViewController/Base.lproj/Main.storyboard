@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="1022" y="168"/>
         </scene>
-        <!--Main View Controller-->
+        <!--LFSideViewController-->
         <scene sceneID="2UY-9T-3Nj">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="iU5-c6-udx" customClass="MainViewController" customModule="LFSideViewController" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <constraint firstItem="DjS-lY-gQA" firstAttribute="top" secondItem="Exw-dF-g6T" secondAttribute="top" id="gEe-JE-CaU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8GC-1G-CL0">
+                    <navigationItem key="navigationItem" title="LFSideViewController" id="8GC-1G-CL0">
                         <barButtonItem key="leftBarButtonItem" title="Left" id="7Qi-86-AX8">
                             <connections>
                                 <action selector="openLeftSideMenu:" destination="iU5-c6-udx" id="0Ac-E1-QmI"/>

@@ -20,14 +20,22 @@ class MainViewController: UIViewController, LFSideViewDelegate {
     }
     
     @IBAction func openRightSideMenu(sender: AnyObject) {
-        self.sideViewController().presentRightViewController()
+        self.sideViewController().toogleRightViewController()
     }
     
-    func willPresentleftViewController() {
-        println("willPresentleftViewController")
+    func willPresentViewController(viewController: UIViewController?) {
+        println("willPresentViewController \(viewController)")
     }
     
-    func didPresentleftViewController() {
-        println("didPresentleftViewController")
+    func didPresentViewController(viewController: UIViewController?) {
+        println("didPresentViewController \(viewController)")
+    }
+    
+    func willHideViewController(viewController: UIViewController?) {
+        println("willHideViewController \(viewController)")
+    }
+    
+    func didHideViewController(viewController: UIViewController?) {
+        println("didHideViewController \(viewController)")
     }
 }
