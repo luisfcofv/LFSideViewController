@@ -1,4 +1,7 @@
 # LFSideViewController ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+[![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/LFSideViewController/badge.png)](http://cocoadocs.org/docsets/LFSideViewController)
+[![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/LFSideViewController/badge.svg)](http://cocoadocs.org/docsets/LFSideViewController)
+
 iOS 8 side menu
 
 <img src="https://raw.githubusercontent.com/luisfcofv/LFSideViewController/master/LFSideViewController.gif?" alt="Demo" width="320" height="568" />
@@ -30,6 +33,8 @@ class RootViewController: LFSideViewController {
     }
 }
 ```
+
+Check out the example project for more details.
 
 ## Licence
 
