@@ -15,12 +15,16 @@ class MainViewController: UIViewController, LFSideViewDelegate {
         self.sideViewController().delegate = self
     }
 
-    @IBAction func openLeftSideMenu(sender: AnyObject) {
+    @IBAction func leftSideMenuPressed() {
         self.sideViewController().toogleLeftViewController()
     }
     
-    @IBAction func openRightSideMenu(sender: AnyObject) {
-        self.sideViewController().toogleRightViewController()
+    @IBAction func rightSideMenuPressed() {
+        if self.sideViewController().rightViewControllerVisible {
+            self.sideViewController().hideRightViewController()
+        } else {
+            self.sideViewController().presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .CurveEaseIn)
+        }
     }
     
     func willPresentViewController(viewController: UIViewController?) {

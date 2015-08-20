@@ -57,12 +57,12 @@
                     <navigationItem key="navigationItem" title="LFSideViewController" id="8GC-1G-CL0">
                         <barButtonItem key="leftBarButtonItem" title="Left" id="7Qi-86-AX8">
                             <connections>
-                                <action selector="openLeftSideMenu:" destination="iU5-c6-udx" id="0Ac-E1-QmI"/>
+                                <action selector="leftSideMenuPressed" destination="iU5-c6-udx" id="bms-gq-kfG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Right" id="TdI-Ue-aYB">
                             <connections>
-                                <action selector="openRightSideMenu:" destination="iU5-c6-udx" id="Ysd-S6-HPl"/>
+                                <action selector="rightSideMenuPressed" destination="iU5-c6-udx" id="CMC-Aj-JCd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

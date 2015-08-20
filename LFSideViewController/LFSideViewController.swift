@@ -65,7 +65,6 @@ class LFSideViewController: UIViewController {
     }
     
     func presentLeftViewController() {
-//        self.presentLeftViewController(self.animationDuration, dampingRatio: 0.5, velocity: 10.0, options: .CurveEaseIn)
         self.presentLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseIn)
     }
     
@@ -84,6 +83,7 @@ class LFSideViewController: UIViewController {
     func presentLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
         self.delegate?.willPresentViewController?(self.leftViewController)
         self.leftViewController?.view.hidden = false
+        self.leftViewControllerVisible = true
             
         UIView.animateWithDuration(duration,
             delay: 0.0,
@@ -100,6 +100,7 @@ class LFSideViewController: UIViewController {
     func presentRightViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
         self.delegate?.willPresentViewController?(self.rightViewController)
         self.rightViewController?.view.hidden = false
+        self.rightViewControllerVisible = true
         
         UIView.animateWithDuration(duration,
             delay: 0.0,
@@ -115,11 +116,13 @@ class LFSideViewController: UIViewController {
     
     func hideLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
         self.delegate?.willHideViewController?(self.leftViewController)
+        self.leftViewControllerVisible = false
         self.hideMenuViewController(duration, dampingRatio: dampingRatio, velocity: velocity, options: options, viewController: self.leftViewController)
     }
     
     func hideRightViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
         self.delegate?.willHideViewController?(self.rightViewController)
+        self.rightViewControllerVisible = false
         self.hideMenuViewController(duration, dampingRatio: dampingRatio, velocity: velocity, options: options, viewController: self.rightViewController)
     }
     
@@ -144,8 +147,6 @@ class LFSideViewController: UIViewController {
         } else {
             presentLeftViewController()
         }
-    
-        self.leftViewControllerVisible = !self.leftViewControllerVisible
     }
     
     func toogleRightViewController() {
@@ -154,7 +155,5 @@ class LFSideViewController: UIViewController {
         } else {
             presentRightViewController()
         }
-        
-        self.rightViewControllerVisible = !self.rightViewControllerVisible
     }
 }
