@@ -57,15 +57,37 @@
                     <navigationItem key="navigationItem" id="8GC-1G-CL0">
                         <barButtonItem key="leftBarButtonItem" title="Left" id="7Qi-86-AX8">
                             <connections>
-                                <action selector="openSideMenu:" destination="iU5-c6-udx" id="Qb6-y8-GDj"/>
+                                <action selector="openLeftSideMenu:" destination="iU5-c6-udx" id="0Ac-E1-QmI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Right" id="TdI-Ue-aYB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Right" id="TdI-Ue-aYB">
+                            <connections>
+                                <action selector="openRightSideMenu:" destination="iU5-c6-udx" id="Ysd-S6-HPl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2oJ-yf-euW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2583" y="168"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="1pQ-5Q-t4Q">
+            <objects>
+                <viewController storyboardIdentifier="RightViewController" id="QVk-xf-r6o" customClass="RightViewController" customModule="LFSideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1V0-W6-9KO"/>
+                        <viewControllerLayoutGuide type="bottom" id="103-dr-Z6a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wUt-Wf-LyY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OK-rE-EJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="873"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="wwr-Ah-5Pc">
@@ -175,7 +197,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfJ-Ig-DZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771" y="-498"/>
+            <point key="canvasLocation" x="2583" y="-519"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7lw-da-6MP">

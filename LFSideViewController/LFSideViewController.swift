@@ -8,17 +8,38 @@
 
 import UIKit
 
+@objc protocol LFSideViewDelegate {
+    optional func willPresentleftViewController()
+    optional func didPresentleftViewController()
+    optional func willHideleftViewController()
+    optional func didHideleftViewController()
+}
+
 class LFSideViewController: UIViewController {
 
     var animationDuration: NSTimeInterval = 0.5
-    var leftViewControllerVisible: Bool = false
     var contentView: UIView?
+    var delegate: LFSideViewDelegate?
+    var leftViewControllerVisible: Bool = false
+
     var leftViewController : UIViewController? {
         didSet {
             if let leftViewController = self.leftViewController {
                 self.addChildViewController(leftViewController)
                 leftViewController.didMoveToParentViewController(self)
-                self.contentView!.addSubview(leftViewController.view)
+                leftViewController.view.hidden = true
+                self.contentView!.insertSubview(leftViewController.view, atIndex: 0)
+            }
+        }
+    }
+    
+    var rightViewController : UIViewController? {
+        didSet {
+            if let rightViewController = self.rightViewController {
+                self.addChildViewController(rightViewController)
+                rightViewController.didMoveToParentViewController(self)
+                rightViewController.view.hidden = true
+                self.contentView!.insertSubview(rightViewController.view, atIndex: 0)
             }
         }
     }
@@ -44,12 +65,22 @@ class LFSideViewController: UIViewController {
         self.presentLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseIn)
     }
     
+    func presentRightViewController() {
+        self.presentRightViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseIn)
+    }
+    
     func hideLeftViewController() {
         self.hideLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseOut)
     }
+    
+    func hideRightViewController() {
+        self.hideLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseOut)
+    }
 
-    func presentLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat,
-        velocity: CGFloat, options: UIViewAnimationOptions) {
+    func presentLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
+        self.delegate?.willPresentleftViewController?()
+        self.leftViewController?.view.hidden = false
+            
         UIView.animateWithDuration(duration,
             delay: 0.0,
             usingSpringWithDamping: dampingRatio,
@@ -58,12 +89,28 @@ class LFSideViewController: UIViewController {
             animations: {
                 self.contentViewController!.view.frame.origin.x = 300
         }, completion: {_ in
-                // TODO:
+            self.delegate?.didPresentleftViewController?()
         })
     }
     
-    func hideLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat,
-        velocity: CGFloat, options: UIViewAnimationOptions) {
+    func presentRightViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
+        self.rightViewController?.view.hidden = false
+        
+        UIView.animateWithDuration(duration,
+            delay: 0.0,
+            usingSpringWithDamping: dampingRatio,
+            initialSpringVelocity: velocity,
+            options: options,
+            animations: {
+                self.contentViewController!.view.frame.origin.x = -100
+        }, completion: {_ in
+                
+        })
+    }
+    
+    func hideLeftViewController(duration: NSTimeInterval, dampingRatio: CGFloat, velocity: CGFloat, options: UIViewAnimationOptions) {
+        self.delegate?.willHideleftViewController?()
+            
         UIView.animateWithDuration(duration,
             delay: 0.0,
             usingSpringWithDamping: dampingRatio,
@@ -72,7 +119,8 @@ class LFSideViewController: UIViewController {
             animations: {
                 self.contentViewController!.view.frame.origin.x = 0
             }, completion: {_ in
-                // TODO:
+                self.leftViewController?.view.hidden = true
+                self.delegate?.didHideleftViewController?()
             })
     }
     

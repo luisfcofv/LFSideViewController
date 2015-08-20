@@ -8,9 +8,26 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, LFSideViewDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.sideViewController().delegate = self
+    }
 
-    @IBAction func openSideMenu(sender: AnyObject) {
+    @IBAction func openLeftSideMenu(sender: AnyObject) {
         self.sideViewController().toogleLeftViewController()
+    }
+    
+    @IBAction func openRightSideMenu(sender: AnyObject) {
+        self.sideViewController().presentRightViewController()
+    }
+    
+    func willPresentleftViewController() {
+        println("willPresentleftViewController")
+    }
+    
+    func didPresentleftViewController() {
+        println("didPresentleftViewController")
     }
 }
