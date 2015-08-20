@@ -3,6 +3,11 @@ iOS 8 side menu
 
 <img src="https://raw.githubusercontent.com/luisfcofv/LFSideViewController/master/LFSideViewController.gif?" alt="Demo" width="320" height="568" />
 
+#### Requirements
+
+* Xcode 6
+* iOS 8
+
 #### Usage
 
 ```
