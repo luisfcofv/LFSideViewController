@@ -12,7 +12,7 @@ class MainViewController: UIViewController, LFSideViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sideViewController().delegate = self
+        self.sideViewController()!.delegate = self
     }
     
     override func shouldAutorotate() -> Bool {
@@ -24,14 +24,14 @@ class MainViewController: UIViewController, LFSideViewDelegate {
     }
 
     @IBAction func leftSideMenuPressed() {
-        self.sideViewController().toogleLeftViewController()
+        self.sideViewController()!.toogleLeftViewController()
     }
     
     @IBAction func rightSideMenuPressed() {
-        if self.sideViewController().rightViewControllerVisible {
-            self.sideViewController().hideRightViewController()
+        if self.sideViewController()!.rightViewControllerVisible {
+            self.sideViewController()!.hideRightViewController()
         } else {
-            self.sideViewController().presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .CurveEaseIn)
+            self.sideViewController()!.presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .CurveEaseIn)
         }
     }
 
