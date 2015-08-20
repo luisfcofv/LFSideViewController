@@ -14,6 +14,14 @@ class MainViewController: UIViewController, LFSideViewDelegate {
         super.viewDidLoad()
         self.sideViewController().delegate = self
     }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return UIInterfaceOrientation.Portrait.rawValue
+    }
 
     @IBAction func leftSideMenuPressed() {
         self.sideViewController().toogleLeftViewController()
@@ -26,7 +34,7 @@ class MainViewController: UIViewController, LFSideViewDelegate {
             self.sideViewController().presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .CurveEaseIn)
         }
     }
-    
+
     func willPresentViewController(viewController: UIViewController?) {
         println("willPresentViewController \(viewController)")
     }

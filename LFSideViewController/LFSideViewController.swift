@@ -64,6 +64,37 @@ class LFSideViewController: UIViewController {
         self.view.insertSubview(self.contentView!, atIndex: 0)
     }
     
+    override func shouldAutorotate() -> Bool {
+        if let topViewController = self.topViewController() {
+            return topViewController.shouldAutorotate()
+        }
+        
+        return super.shouldAutorotate()
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        if let topViewController = self.topViewController() {
+            return topViewController.supportedInterfaceOrientations()
+        }
+        
+        return super.supportedInterfaceOrientations()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        self.contentView?.frame.size = size
+    }
+    
+    private func topViewController() -> UIViewController? {
+        if let contentViewController = self.contentViewController {
+            if contentViewController.isKindOfClass(UINavigationController) {
+                let navigationController = contentViewController as! UINavigationController
+                return navigationController.topViewController
+            }
+        }
+
+        return self.contentViewController
+    }
+    
     func presentLeftViewController() {
         self.presentLeftViewController(self.animationDuration, dampingRatio: 1.0, velocity: 0.0, options: .CurveEaseIn)
     }
