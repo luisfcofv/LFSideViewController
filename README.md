@@ -14,7 +14,7 @@ iOS 8 side menu
 ## Installation
 The best and easiest way is to use [CocoaPods](http://cocoapods.org).
 
-    pod 'LFSideViewController', '~> 0.1.0'
+    pod 'LFSideViewController', '~> 1.1.0'
 
 #### Usage
 
@@ -27,9 +27,9 @@ class RootViewController: LFSideViewController {
         super.viewDidLoad()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController") as? UIViewController
-        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as? UIViewController
-        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as? UIViewController
+        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController")
+        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController")
+        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
     }
 }
 ```
