@@ -19,8 +19,8 @@ class MainViewController: UIViewController, LFSideViewDelegate {
         return false
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return UIInterfaceOrientation.Portrait.rawValue
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
 
     @IBAction func leftSideMenuPressed() {
@@ -36,18 +36,18 @@ class MainViewController: UIViewController, LFSideViewDelegate {
     }
 
     func willPresentViewController(viewController: UIViewController?) {
-        println("willPresentViewController \(viewController)")
+        print("willPresentViewController \(viewController)")
     }
     
     func didPresentViewController(viewController: UIViewController?) {
-        println("didPresentViewController \(viewController)")
+        print("didPresentViewController \(viewController)")
     }
     
     func willHideViewController(viewController: UIViewController?) {
-        println("willHideViewController \(viewController)")
+        print("willHideViewController \(viewController)")
     }
     
     func didHideViewController(viewController: UIViewController?) {
-        println("didHideViewController \(viewController)")
+        print("didHideViewController \(viewController)")
     }
 }

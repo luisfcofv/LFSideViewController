@@ -14,8 +14,8 @@ class RootViewController: LFSideViewController {
         super.viewDidLoad()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController") as? UIViewController
-        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as? UIViewController
-        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as? UIViewController
+        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController")
+        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController")
+        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
     }
 }

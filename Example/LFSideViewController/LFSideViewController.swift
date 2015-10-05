@@ -84,7 +84,7 @@ public class LFSideViewController: UIViewController {
         return super.shouldAutorotate()
     }
     
-    override public func supportedInterfaceOrientations() -> Int {
+    override public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if let topViewController = self.topViewController() {
             return topViewController.supportedInterfaceOrientations()
         }
