@@ -1,6 +1,7 @@
-# LFSideViewController ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
-[![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/LFSideViewController/badge.png)](http://cocoadocs.org/docsets/LFSideViewController)
-[![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/LFSideViewController/badge.svg)](http://cocoadocs.org/docsets/LFSideViewController)
+# LFSideViewController
+![License MIT](https://img.shields.io/github/license/luisfcofv/LFSideViewController.svg)
+[![Badge w/ Version](https://img.shields.io/cocoapods/v/LFSideViewController.svg)](http://cocoadocs.org/docsets/LFSideViewController)
+[![Badge w/ Platform](https://img.shields.io/cocoapods/p/LFSideViewController.svg)](http://cocoadocs.org/docsets/LFSideViewController)
 
 iOS 8 side menu
 
@@ -18,7 +19,7 @@ The best and easiest way is to use [CocoaPods](http://cocoapods.org).
 
 #### Usage
 
-```
+```swift
 import UIKit
 
 class RootViewController: LFSideViewController {
@@ -27,15 +28,15 @@ class RootViewController: LFSideViewController {
         super.viewDidLoad()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController")
-        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController")
-        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
+        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController") as? UIViewController
+        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as? UIViewController
+        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as? UIViewController
     }
 }
 ```
 
 Check out the example project for more details.
 
-## Licence
+## License
 
-LFSideViewController is licensed under the [MIT Licence](LICENSE).
+LFSideViewController is licensed under the [MIT License](LICENSE).
