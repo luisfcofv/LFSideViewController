@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  CenterViewController.swift
 //  LFSideViewController
 //
 //  Created by Luis Flores on 8/18/15.
@@ -9,13 +9,8 @@
 import UIKit
 import LFSideViewController
 
-class MainViewController: UIViewController, LFSideViewDelegate {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.sideViewController()!.delegate = self
-    }
-    
+class CenterViewController: UIViewController {
+
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -23,7 +18,12 @@ class MainViewController: UIViewController, LFSideViewDelegate {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
-
+    
+    @IBAction func updateViewControllerPressed(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.sideViewController()!.contentViewController = storyboard.instantiateViewControllerWithIdentifier("AdditionalCenterViewController")
+    }
+    
     @IBAction func leftSideMenuPressed() {
         self.sideViewController()!.toogleLeftViewController()
     }
@@ -34,21 +34,5 @@ class MainViewController: UIViewController, LFSideViewDelegate {
         } else {
             self.sideViewController()!.presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .CurveEaseIn)
         }
-    }
-
-    func willPresentViewController(viewController: UIViewController?) {
-        print("willPresentViewController \(viewController)")
-    }
-    
-    func didPresentViewController(viewController: UIViewController?) {
-        print("didPresentViewController \(viewController)")
-    }
-    
-    func willHideViewController(viewController: UIViewController?) {
-        print("willHideViewController \(viewController)")
-    }
-    
-    func didHideViewController(viewController: UIViewController?) {
-        print("didHideViewController \(viewController)")
     }
 }

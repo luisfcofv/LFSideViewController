@@ -12,9 +12,10 @@
 		4A3A01271C08F49100798E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3A01261C08F49100798E12 /* Assets.xcassets */; };
 		4A3A012A1C08F49100798E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3A01281C08F49100798E12 /* LaunchScreen.storyboard */; };
 		4A3A01351C08F50800798E12 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A01311C08F50800798E12 /* LeftViewController.swift */; };
-		4A3A01361C08F50800798E12 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A01321C08F50800798E12 /* MainViewController.swift */; };
+		4A3A01361C08F50800798E12 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A01321C08F50800798E12 /* CenterViewController.swift */; };
 		4A3A01371C08F50800798E12 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A01331C08F50800798E12 /* RightViewController.swift */; };
 		4A3A01381C08F50800798E12 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A01341C08F50800798E12 /* RootViewController.swift */; };
+		4A3A013A1C08FB9700798E12 /* AdditionalCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A01391C08FB9700798E12 /* AdditionalCenterViewController.swift */; };
 		9239DF67F79C65FC8E551366 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA75076153FE5D66784F244 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,9 +28,10 @@
 		4A3A01291C08F49100798E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A3A012B1C08F49100798E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A3A01311C08F50800798E12 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
-		4A3A01321C08F50800798E12 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4A3A01321C08F50800798E12 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		4A3A01331C08F50800798E12 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		4A3A01341C08F50800798E12 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4A3A01391C08FB9700798E12 /* AdditionalCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalCenterViewController.swift; sourceTree = "<group>"; };
 		ADB67F50CE944FCF1488FD6C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C1A349AC36CB81175C521855 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				4A3A01311C08F50800798E12 /* LeftViewController.swift */,
-				4A3A01321C08F50800798E12 /* MainViewController.swift */,
+				4A3A01321C08F50800798E12 /* CenterViewController.swift */,
+				4A3A01391C08FB9700798E12 /* AdditionalCenterViewController.swift */,
 				4A3A01331C08F50800798E12 /* RightViewController.swift */,
 				4A3A01341C08F50800798E12 /* RootViewController.swift */,
 				4A3A011F1C08F49100798E12 /* AppDelegate.swift */,
@@ -223,7 +226,8 @@
 				4A3A01381C08F50800798E12 /* RootViewController.swift in Sources */,
 				4A3A01371C08F50800798E12 /* RightViewController.swift in Sources */,
 				4A3A01201C08F49100798E12 /* AppDelegate.swift in Sources */,
-				4A3A01361C08F50800798E12 /* MainViewController.swift in Sources */,
+				4A3A013A1C08FB9700798E12 /* AdditionalCenterViewController.swift in Sources */,
+				4A3A01361C08F50800798E12 /* CenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

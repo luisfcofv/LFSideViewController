@@ -9,7 +9,7 @@
 import UIKit
 import LFSideViewController
 
-class RootViewController: LFSideViewController {
+class RootViewController: LFSideViewController, LFSideViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +18,23 @@ class RootViewController: LFSideViewController {
         self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController")
         self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController")
         self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
+        
+        self.sideViewController()!.delegate = self
+    }
+    
+    func willPresentViewController(viewController: UIViewController?) {
+        print("willPresentViewController \(viewController)")
+    }
+    
+    func didPresentViewController(viewController: UIViewController?) {
+        print("didPresentViewController \(viewController)")
+    }
+    
+    func willHideViewController(viewController: UIViewController?) {
+        print("willHideViewController \(viewController)")
+    }
+    
+    func didHideViewController(viewController: UIViewController?) {
+        print("didHideViewController \(viewController)")
     }
 }

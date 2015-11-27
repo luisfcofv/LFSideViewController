@@ -8,7 +8,7 @@
         <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="LFSideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -41,7 +41,7 @@
         <!--Example-->
         <scene sceneID="2UY-9T-3Nj">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="iU5-c6-udx" customClass="MainViewController" customModule="LFSideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CenterViewController" id="iU5-c6-udx" customClass="CenterViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9SU-JR-vs6"/>
                         <viewControllerLayoutGuide type="bottom" id="Elf-Sa-PBg"/>
@@ -49,8 +49,25 @@
                     <view key="view" contentMode="scaleToFill" id="Exw-dF-g6T">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYX-AM-DhP">
+                                <rect key="frame" x="214.5" y="285" width="171" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Update View Controller">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateViewControllerPressed:" destination="iU5-c6-udx" eventType="touchUpInside" id="tBp-QV-0E5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.086274509803921567" green="0.68627450980392157" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aYX-AM-DhP" firstAttribute="centerX" secondItem="Exw-dF-g6T" secondAttribute="centerX" id="2tk-Bi-Sp4"/>
+                            <constraint firstItem="aYX-AM-DhP" firstAttribute="centerY" secondItem="Exw-dF-g6T" secondAttribute="centerY" id="Qye-Tc-lJE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Example" id="8GC-1G-CL0">
                         <barButtonItem key="leftBarButtonItem" title="Left" style="done" id="7Qi-86-AX8">
@@ -74,7 +91,7 @@
         <!--Right View Controller-->
         <scene sceneID="1pQ-5Q-t4Q">
             <objects>
-                <viewController storyboardIdentifier="RightViewController" id="QVk-xf-r6o" customClass="RightViewController" customModule="LFSideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RightViewController" id="QVk-xf-r6o" customClass="RightViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1V0-W6-9KO"/>
                         <viewControllerLayoutGuide type="bottom" id="103-dr-Z6a"/>
@@ -90,10 +107,72 @@
             </objects>
             <point key="canvasLocation" x="2583" y="873"/>
         </scene>
+        <!--Additional Center View Controller-->
+        <scene sceneID="b30-ct-JpM">
+            <objects>
+                <viewController storyboardIdentifier="AdditionalCenterViewController" id="kbl-Fz-89k" customClass="AdditionalCenterViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="80n-gM-BgZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZEE-kg-hul"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HrE-X4-yVN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5k-h8-X5q">
+                                <rect key="frame" x="10" y="285" width="74" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Left menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftMenuPressed:" destination="kbl-Fz-89k" eventType="touchUpInside" id="Wg9-XD-Thd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmC-w1-3qQ">
+                                <rect key="frame" x="212" y="285" width="175" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Original View Controller">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="originalViewControllerPressed:" destination="kbl-Fz-89k" eventType="touchUpInside" id="9I4-Ts-Fy4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10G-5G-cXr">
+                                <rect key="frame" x="506" y="285" width="84" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Right menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rightMenuPressed:" destination="kbl-Fz-89k" eventType="touchUpInside" id="Zjd-Dy-E83"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.68627450980000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lmC-w1-3qQ" firstAttribute="centerY" secondItem="HrE-X4-yVN" secondAttribute="centerY" id="GkY-DA-3Ua"/>
+                            <constraint firstAttribute="trailing" secondItem="10G-5G-cXr" secondAttribute="trailing" constant="10" id="UZ3-ub-yGz"/>
+                            <constraint firstItem="X5k-h8-X5q" firstAttribute="leading" secondItem="HrE-X4-yVN" secondAttribute="leading" constant="10" id="VyA-Mz-IpQ"/>
+                            <constraint firstItem="lmC-w1-3qQ" firstAttribute="centerX" secondItem="HrE-X4-yVN" secondAttribute="centerX" id="cqY-Nd-4Wn"/>
+                            <constraint firstItem="X5k-h8-X5q" firstAttribute="centerY" secondItem="HrE-X4-yVN" secondAttribute="centerY" id="oOB-kz-Jtr"/>
+                            <constraint firstItem="10G-5G-cXr" firstAttribute="centerY" secondItem="HrE-X4-yVN" secondAttribute="centerY" id="x4F-Ar-ayt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZe-gB-t34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="1574"/>
+        </scene>
         <!--Left View Controller-->
         <scene sceneID="wwr-Ah-5Pc">
             <objects>
-                <tableViewController storyboardIdentifier="LeftViewController" id="cou-0B-Kyw" customClass="LeftViewController" customModule="LFSideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LeftViewController" id="cou-0B-Kyw" customClass="LeftViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ngu-Ju-1NF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

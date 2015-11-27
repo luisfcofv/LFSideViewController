@@ -18,6 +18,10 @@ import UIKit
 public extension UIViewController {
     
     public func sideViewController() -> LFSideViewController? {
+        if self.isKindOfClass(LFSideViewController) {
+            return self as? LFSideViewController
+        }
+        
         var viewController = self.parentViewController
         while viewController != nil && !(viewController!.isKindOfClass(LFSideViewController)) {
             viewController = viewController!.parentViewController
@@ -39,6 +43,13 @@ public class LFSideViewController: UIViewController {
     public var rightViewControllerVisible: Bool = false
     
     public var leftViewController : UIViewController? {
+        willSet {
+            if let leftViewController = self.leftViewController {
+                leftViewController.removeFromParentViewController()
+                leftViewController.view.removeFromSuperview()
+            }
+        }
+        
         didSet {
             if let leftViewController = self.leftViewController {
                 self.addChildViewController(leftViewController)
@@ -50,6 +61,13 @@ public class LFSideViewController: UIViewController {
     }
     
     public var rightViewController : UIViewController? {
+        willSet {
+            if let rightViewController = self.rightViewController {
+                rightViewController.removeFromParentViewController()
+                rightViewController.view.removeFromSuperview()
+            }
+        }
+        
         didSet {
             if let rightViewController = self.rightViewController {
                 self.addChildViewController(rightViewController)
@@ -61,6 +79,13 @@ public class LFSideViewController: UIViewController {
     }
     
     public var contentViewController : UIViewController? {
+        willSet {
+            if let contentViewController = self.contentViewController {
+                contentViewController.removeFromParentViewController()
+                contentViewController.view.removeFromSuperview()
+            }
+        }
+        
         didSet {
             if let contentViewController = self.contentViewController {
                 self.addChildViewController(contentViewController)
