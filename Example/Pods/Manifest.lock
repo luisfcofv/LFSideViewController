@@ -1,0 +1,14 @@
+PODS:
+  - LFSideViewController (1.1.0)
+
+DEPENDENCIES:
+  - LFSideViewController (from `../`)
+
+EXTERNAL SOURCES:
+  LFSideViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LFSideViewController: a7ecaeee9e8fea05240067d2b528e853fc3aea56
+
+COCOAPODS: 0.39.0

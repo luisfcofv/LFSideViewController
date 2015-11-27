@@ -1,0 +1,6 @@
+framework module LFSideViewController {
+  umbrella header "LFSideViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
