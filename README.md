@@ -16,7 +16,7 @@ iOS 8 side menu
 ## Installation
 The best and easiest way is to use [CocoaPods](http://cocoapods.org).
 
-    pod 'LFSideViewController', '~> 1.3.0'
+    pod 'LFSideViewController', '~> 1.3.1'
 
 #### Usage
 
