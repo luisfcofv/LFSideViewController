@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LFSideViewController"
-  s.version          = "1.3.0"
+  s.version          = "1.3.1"
   s.summary          = "iOS 8 side menu."
   s.homepage         = "https://github.com/luisfcofv/LFSideViewController"
   s.screenshots      = "https://raw.githubusercontent.com/luisfcofv/LFSideViewController/master/LFSideViewController.gif"
