@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LFSideViewController"
-  s.version          = "1.2.0"
+  s.version          = "1.3.0"
   s.summary          = "iOS 8 side menu."
   s.homepage         = "https://github.com/luisfcofv/LFSideViewController"
   s.screenshots      = "https://raw.githubusercontent.com/luisfcofv/LFSideViewController/master/LFSideViewController.gif"
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/luisfcofv'
   s.platform         = :ios, '8.0'
   s.requires_arc     = true
-  s.source_files     = 'Pod/*'
+  s.source_files     = 'LFSideViewController/LFSideViewController.swift'
   s.frameworks       = 'UIKit'
 end
