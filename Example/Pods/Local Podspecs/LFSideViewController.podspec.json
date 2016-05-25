@@ -1,6 +1,6 @@
 {
   "name": "LFSideViewController",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "summary": "iOS 8 side menu.",
   "homepage": "https://github.com/luisfcofv/LFSideViewController",
   "screenshots": "https://raw.githubusercontent.com/luisfcofv/LFSideViewController/master/LFSideViewController.gif",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/luisfcofv/LFSideViewController.git",
-    "tag": "1.1.0"
+    "tag": "1.2.0"
   },
   "social_media_url": "https://twitter.com/luisfcofv",
   "platforms": {

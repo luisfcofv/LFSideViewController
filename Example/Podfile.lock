@@ -1,5 +1,5 @@
 PODS:
-  - LFSideViewController (1.1.0)
+  - LFSideViewController (1.2.0)
 
 DEPENDENCIES:
   - LFSideViewController (from `../`)
@@ -9,6 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LFSideViewController: a7ecaeee9e8fea05240067d2b528e853fc3aea56
+  LFSideViewController: 5d0a9929c47f8f995cd4709916545276cca2df6e
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: fb3f80c94da5fea86a77a0f5958b2ce90b69e970
+
+COCOAPODS: 1.0.0

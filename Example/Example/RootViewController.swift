@@ -19,7 +19,9 @@ class RootViewController: LFSideViewController, LFSideViewDelegate {
         self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController")
         self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
         
-        self.sideViewController()!.delegate = self
+        if let sideViewController = self.sideViewController() {
+            sideViewController.delegate = self
+        }
     }
     
     func willPresentViewController(viewController: UIViewController?) {

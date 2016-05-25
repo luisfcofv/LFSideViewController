@@ -16,7 +16,6 @@ import UIKit
 }
 
 public extension UIViewController {
-    
     public func sideViewController() -> LFSideViewController? {
         if self.isKindOfClass(LFSideViewController) {
             return self as? LFSideViewController
@@ -36,13 +35,13 @@ public class LFSideViewController: UIViewController {
     @IBInspectable var leftSide: CGFloat = 250
     @IBInspectable var rightSide: CGFloat = 250
     
+    public weak var delegate: LFSideViewDelegate?
     public var animationDuration: NSTimeInterval = 0.5
     public var contentView: UIView?
-    public var delegate: LFSideViewDelegate?
     public var leftViewControllerVisible: Bool = false
     public var rightViewControllerVisible: Bool = false
     
-    public var leftViewController : UIViewController? {
+    public weak var leftViewController : UIViewController? {
         willSet {
             if let leftViewController = self.leftViewController {
                 leftViewController.removeFromParentViewController()
@@ -60,7 +59,7 @@ public class LFSideViewController: UIViewController {
         }
     }
     
-    public var rightViewController : UIViewController? {
+    public weak var rightViewController : UIViewController? {
         willSet {
             if let rightViewController = self.rightViewController {
                 rightViewController.removeFromParentViewController()
@@ -78,7 +77,7 @@ public class LFSideViewController: UIViewController {
         }
     }
     
-    public var contentViewController : UIViewController? {
+    public weak var contentViewController : UIViewController? {
         willSet {
             if let contentViewController = self.contentViewController {
                 contentViewController.removeFromParentViewController()
