@@ -4,19 +4,19 @@
 [![Badge w/ Platform](https://img.shields.io/cocoapods/p/LFSideViewController.svg)](http://cocoadocs.org/docsets/LFSideViewController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-iOS 8 side menu
+iOS side menu
 
 <img src="https://raw.githubusercontent.com/luisfcofv/LFSideViewController/master/LFSideViewController.gif?" alt="Demo" width="320" height="568" />
 
 #### Requirements
 
 * Xcode 6
-* iOS 8
+* iOS 9
 
 ## Installation
 The best and easiest way is to use [CocoaPods](http://cocoapods.org).
 
-    pod 'LFSideViewController', '~> 1.3.1'
+    pod 'LFSideViewController', '~> 2.0.0'
 
 #### Usage
 
@@ -29,9 +29,13 @@ class RootViewController: LFSideViewController {
         super.viewDidLoad()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController") as? UIViewController
-        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as? UIViewController
-        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as? UIViewController
+        self.contentViewController = storyboard.instantiateViewController(withIdentifier: "NavigationViewController")
+        self.rightViewController = storyboard.instantiateViewController(withIdentifier: "RightViewController")
+        self.leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController")
+        
+        if let sideViewController = self.sideViewController() {
+            sideViewController.delegate = self
+        }
     }
 }
 ```
