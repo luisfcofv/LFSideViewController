@@ -11,17 +11,17 @@ import LFSideViewController
 
 class CenterViewController: UIViewController {
 
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     @IBAction func updateViewControllerPressed(sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.sideViewController()!.contentViewController = storyboard.instantiateViewControllerWithIdentifier("AdditionalCenterViewController")
+        self.sideViewController()!.contentViewController = storyboard.instantiateViewController(withIdentifier: "AdditionalCenterViewController")
     }
     
     @IBAction func leftSideMenuPressed() {
@@ -32,7 +32,7 @@ class CenterViewController: UIViewController {
         if self.sideViewController()!.rightViewControllerVisible {
             self.sideViewController()!.hideRightViewController()
         } else {
-            self.sideViewController()!.presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .CurveEaseIn)
+            self.sideViewController()!.presentRightViewController(0.5, dampingRatio: 0.4, velocity: 10, options: .curveEaseIn)
         }
     }
 }

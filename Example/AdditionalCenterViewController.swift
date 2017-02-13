@@ -12,7 +12,7 @@ class AdditionalCenterViewController: UIViewController {
 
     @IBAction func originalViewControllerPressed(sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.sideViewController()!.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController")
+        self.sideViewController()!.contentViewController = storyboard.instantiateViewController(withIdentifier: "NavigationViewController")
     }
     
     @IBAction func leftMenuPressed(sender: AnyObject) {
