@@ -15,28 +15,28 @@ class RootViewController: LFSideViewController, LFSideViewDelegate {
         super.viewDidLoad()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationViewController")
-        self.rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController")
-        self.leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
+        self.contentViewController = storyboard.instantiateViewController(withIdentifier: "NavigationViewController")
+        self.rightViewController = storyboard.instantiateViewController(withIdentifier: "RightViewController")
+        self.leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController")
         
         if let sideViewController = self.sideViewController() {
             sideViewController.delegate = self
         }
     }
     
-    func willPresentViewController(viewController: UIViewController?) {
+    func willPresentViewController(_ viewController: UIViewController?) {
         print("willPresentViewController \(viewController)")
     }
     
-    func didPresentViewController(viewController: UIViewController?) {
+    func didPresentViewController(_ viewController: UIViewController?) {
         print("didPresentViewController \(viewController)")
     }
     
-    func willHideViewController(viewController: UIViewController?) {
+    func willHideViewController(_ viewController: UIViewController?) {
         print("willHideViewController \(viewController)")
     }
     
-    func didHideViewController(viewController: UIViewController?) {
+    func didHideViewController(_ viewController: UIViewController?) {
         print("didHideViewController \(viewController)")
     }
 }
