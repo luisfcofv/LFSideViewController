@@ -41,7 +41,7 @@ open class LFSideViewController: UIViewController {
     open var leftViewControllerVisible: Bool = false
     open var rightViewControllerVisible: Bool = false
     
-    open weak var leftViewController : UIViewController? {
+    open weak var leftViewController: UIViewController? {
         willSet {
             if let leftViewController = self.leftViewController {
                 leftViewController.removeFromParentViewController()
@@ -59,7 +59,7 @@ open class LFSideViewController: UIViewController {
         }
     }
     
-    open weak var rightViewController : UIViewController? {
+    open weak var rightViewController: UIViewController? {
         willSet {
             if let rightViewController = self.rightViewController {
                 rightViewController.removeFromParentViewController()
@@ -77,7 +77,7 @@ open class LFSideViewController: UIViewController {
         }
     }
     
-    open weak var contentViewController : UIViewController? {
+    open weak var contentViewController: UIViewController? {
         willSet {
             if let contentViewController = self.contentViewController {
                 contentViewController.removeFromParentViewController()
@@ -100,7 +100,7 @@ open class LFSideViewController: UIViewController {
         self.view.insertSubview(self.contentView!, at: 0)
     }
     
-    override open var shouldAutorotate : Bool {
+    override open var shouldAutorotate: Bool {
         if let topViewController = self.topViewController() {
             return topViewController.shouldAutorotate
         }
@@ -108,7 +108,7 @@ open class LFSideViewController: UIViewController {
         return super.shouldAutorotate
     }
     
-    override open var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if let topViewController = self.topViewController() {
             return topViewController.supportedInterfaceOrientations
         }
